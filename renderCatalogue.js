@@ -28,7 +28,7 @@ const renderCatalogue = (arr) => {
                             </div>
                             <div class="product-card-purchase">
                                 <button onclick="alertCartFunction()" class="cart-btn" id=${product.id}>Agregar al Carrito</buton>
-                                <button onclick="alertPurchaseFunction() "class="purchase-btn" id=${product.id}>Comprar</buton>
+                                <button onclick="alertPurchaseFunction()" class="purchase-btn" id=${product.id}>Comprar</buton>
                             </div>
         `
         catalogueGrid.append(card);

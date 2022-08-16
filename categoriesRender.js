@@ -28,8 +28,8 @@ const renderCategory = (arr) => {
                                 </div>
                             </div>
                             <div class="product-card-purchase">
-                                <button class="cart-btn">Agregar al Carrito</buton>
-                                <button class="purchase-btn">Comprar</buton>
+                                <button onclick="alertCartFunction()" class="cart-btn">Agregar al Carrito</buton>
+                                <button onclick="alertPurchaseFunction()" class="purchase-btn">Comprar</buton>
                             </div>
         `
         categoryContainer.append(card);
