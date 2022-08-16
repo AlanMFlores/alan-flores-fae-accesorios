@@ -30,7 +30,7 @@ const removeProduct = (product) => {
 const addToFav = () => {
     favBtn.forEach(fav => {
         fav.addEventListener('click', (event) => {
-                event.target.classList.add('like-product');
+                event.target.classList.toggle('like-product');
                 let matchProduct = catalogueProducts.find(product => product.id == event.target.id);
                 let stringifiedMatchProduct = JSON.stringify(matchProduct);
                 event.target.classList.contains('like-product') ? addProduct(stringifiedMatchProduct) : removeProduct(matchProduct);
