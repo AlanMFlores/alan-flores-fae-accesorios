@@ -44,7 +44,8 @@ function alertCartFunction() {
          Swal.fire({
              text: '¡Producto agregado con Éxito!',
              icon: 'success'})
-     }
+        
+        }
     }) 
  }
 
