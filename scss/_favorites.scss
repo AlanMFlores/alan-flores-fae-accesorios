@@ -1,0 +1,99 @@
+.favorites {
+    margin-bottom: $spacing-sections-medium;
+
+    @include media(large-dev) {
+        margin-bottom: $spacing-sections-x-medium;
+    }
+
+    &-title {
+        margin-bottom: $spacing-sections-x-small;
+        text-align: center;
+
+        @include media(large-dev) {
+            text-align: left;
+        }
+    }
+
+    &-products-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include media(large-dev) {
+            gap: 16px;
+        }
+    }
+}
+
+.favorite-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: $spacing-sections-x-small / 2;
+    background-color: $clr-gray-bg;
+    border-radius: 8px;
+
+    @include media(large-dev) {
+        padding: $spacing-sections-x-small;
+        gap: 24px;
+    }
+
+    &--img {
+        width: 100px;
+
+        @include media(large-dev) {
+            width: 200px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    &--info {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-var;
+
+        @include media(large-dev) {
+            gap: 12px;
+        }
+
+        button {
+            border: none;
+            text-align: left;
+            background-color: transparent;
+            color: $clr-main-color;
+
+            @include media(large-dev) {
+                font-size: 2rem;
+            }
+        }
+
+        h3 {
+            @include media(x-medium-dev) {
+                font-size: 2.4rem;
+            }
+
+            @include media(large-dev) {
+                font-size: 3.2rem;
+            }
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+
+            @include media(x-medium-dev) {
+                font-size: 2rem;
+            }
+
+            @include media(large-dev) {
+                font-size: 2.4rem;
+            }
+        }
+
+    }
+
+}

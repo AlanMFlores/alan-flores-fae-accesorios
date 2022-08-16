@@ -1,0 +1,51 @@
+.footer {
+    @include columns-padding;
+    background-color: $clr-dark-color;
+    color: $clr-white-color;
+    padding-top: $spacing-sections-small;
+    padding-bottom: $spacing-sections-small;
+    text-align: center;
+
+    @include media(x-medium-dev) {
+        padding-top: $spacing-sections-small;
+        padding-bottom: $spacing-sections-small;
+    }
+
+    &-info {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $spacing-sections-small;
+
+            @include media(x-medium-dev) {
+                justify-content: center;
+                gap: 24px;
+            }
+        }
+
+        &-item {
+            font-size: $fs-small;
+            font-weight: 100;
+        }
+    }
+
+    &-social-networks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: $spacing-sections-small;
+    }
+
+    .social-networks-links {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+
+    small {
+        font-size: $fs-small;
+    }
+}

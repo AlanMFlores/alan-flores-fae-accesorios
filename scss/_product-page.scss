@@ -1,0 +1,156 @@
+.product-page {
+    @include columns-padding;
+    padding-top: $spacing-sections-small;
+
+    p, label {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .breadcrumbs {
+        margin-bottom: $spacing-sections-x-small;
+        
+        p {
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+    }
+
+    &-name {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 2.4rem;
+        }
+    }
+
+    &-info {
+
+        &--price {
+            margin-bottom: $spacing-sections-x-small;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                font-size: 2.4rem;
+                font-weight: 300;
+            }
+        }
+
+        &--stock {
+            margin-bottom: $spacing-sections-x-small;
+
+            p span {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-variations {
+        margin-bottom: $spacing-sections-x-small;
+
+        &--colors {
+            display: flex;
+            gap: 8px;
+
+            .variation-color {
+                text-align: center;
+
+                figure {
+                    width: 72px;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    &-purchase {
+        margin-bottom: $spacing-sections-small;
+
+        &--quantity {
+            margin-bottom: $spacing-sections-x-small;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            label {
+                font-size: 1.4rem;
+            }
+        }
+
+        .product-quantity {
+            width: 80px;
+            height: 40px;
+            background-color: $clr-gray-bg;
+            border: none;
+            border-radius: 4px;
+            padding: 8px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        &--btns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: $spacing-sections-x-small;
+
+            .purchase-btn {
+                @include purchase-btn;
+            }
+
+            .cart-btn {
+                @include purchase-btn;
+                background-color: $clr-gray-color;
+                color: $clr-dark-color;
+            }
+        }
+
+        .payment-methods {
+            text-align: center;
+
+            a {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.4rem;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-related-products {
+        padding-top: $spacing-sections-small;
+        margin-bottom: $spacing-sections-small;
+
+        h2 {
+            text-align: center;
+            margin-bottom: $spacing-sections-x-small;
+        }
+
+        .related-products {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .gallery {
+        width: 100%;
+        margin-bottom: $spacing-sections-small / 2;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+
+    }
+}

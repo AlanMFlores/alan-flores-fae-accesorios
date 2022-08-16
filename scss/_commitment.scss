@@ -1,0 +1,64 @@
+.commitment {
+    @include columns-padding;
+    padding-top: $spacing-sections-small;
+    padding-bottom: $spacing-sections-small;
+    background-color: $clr-gray-bg;
+    margin-bottom: $spacing-sections-x-medium;
+
+    @include media(x-medium-dev) {
+        padding-top: $spacing-sections-small;
+        padding-bottom: $spacing-sections-small;
+    }
+    
+    &-grid {
+        @include media(x-large-dev) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            align-items: center;
+        }
+    }
+
+    &-title {
+        text-align: center;
+        margin-bottom: $spacing-sections-x-small;
+
+        @include media(x-medium-dev) {
+            margin-bottom: $spacing-sections-small;
+        }
+    }
+
+    &-image {
+        margin-bottom: $spacing-sections-x-small;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+
+            @include media(x-medium-dev) {
+                height: 290px;
+            }
+
+            @include media(x-large-dev) {
+                height: 350px;
+            }
+        }
+    }
+
+    &-text {
+        text-align: center;
+    }
+
+    &-paragraph {
+        line-height: 2.4rem;
+        margin-bottom: $spacing-sections-small / 2;
+
+        @include media(x-medium-dev) {
+            text-align: left;
+        }
+    }
+
+    &-signature {
+        font-size: $fs-tertiary-titles;
+    }
+}

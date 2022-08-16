@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Baskerville, serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    font-size: 1.6rem;
+    transition: 300ms;
+
+    &:hover {
+        color: $clr-main-color;
+    }
+}
+
+label {
+    @include paragraph;
+    display: block;
+    margin-bottom: $spacing-sections-small / 4;
+}
+
+input[type='text'], [type='number'], [type='email'] {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-family: 'Baskerville', serif;
+    font-size: 1.6rem;
+    cursor: pointer
+}
+
+textarea {
+    font-family: 'Montserrat', sans-serif;
+}
+
+::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.breadcrumb {
+    @include breadcrumb;
+    // background-color: $clr-gray-bg;
+}
+
+.breadcrumb-index {
+    @include breadcrumb;
+    @include columns-padding;
+    margin: 0;
+    padding-top: $spacing-sections-x-small;
+    padding-bottom: $spacing-sections-x-small;
+    background-color: $clr-gray-bg;
+}
+

@@ -1,0 +1,15 @@
+body {
+    background-color: $clr-white-color;
+}
+
+.see-more-products-btn,
+.see-products-btn  {
+    @include see-products-btn;
+}
+
+.see-products-btn {
+    @include media(x-medium-dev) {
+        text-align: left;
+    }
+}
+

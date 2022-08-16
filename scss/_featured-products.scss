@@ -1,0 +1,34 @@
+.featured-products {
+    @include columns-padding;
+    padding-top: $spacing-sections-x-medium;
+    text-align: center;
+    background-color: $clr-white-color;
+
+    @include media(x-medium-dev) {
+        padding-top: $spacing-sections-x-medium;
+    }
+
+    &-grid {
+        @include media(x-medium-dev) {
+            display: grid;
+            max-width: 624px;
+            place-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0 auto;
+        }
+
+        @include media(x-large-dev) {
+            max-width: 920px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &-title {
+        margin-bottom: $spacing-sections-x-small;
+    }
+}
+
+.error-render {
+    grid-template-columns: auto;
+    margin-bottom: $spacing-sections-small;
+}

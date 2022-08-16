@@ -1,0 +1,40 @@
+.main-category {
+    @include columns-padding;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: $fs-copy;
+    background-color: $clr-gray-bg;
+    text-align: center;
+    padding-bottom: 24px;
+
+    @include media(x-medium-dev) {
+        text-align: left
+    }
+}
+
+.main-hero {
+    @include columns-padding;
+    display: grid;
+    justify-content: center;
+    padding-bottom: $spacing-sections-medium;
+    background-color: $clr-gray-bg;
+
+    @include media(x-medium-dev) {
+        padding-top: $spacing-sections-x-small;
+        padding-bottom: $spacing-sections-x-medium;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    &-text {
+        text-align: center;
+        @include media(x-medium-dev) {
+            text-align: left;
+        }
+    }
+
+    &-images img {
+        mix-blend-mode:multiply;
+        margin-bottom: $spacing-var;
+    }
+}
