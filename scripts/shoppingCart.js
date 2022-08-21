@@ -32,7 +32,7 @@ shoppingCartBtn.forEach(item => {
     item.addEventListener('click', (event) => {
         let matchProduct = catalogueProducts.find(product => product.id == event.target.id);
         let shoppingCart = getShoppingCartStorage();
-        shoppingCart.push(product);
+        shoppingCart.push(matchProduct);
         saveProductsLocalStorage(shoppingCart);
     })
 })
