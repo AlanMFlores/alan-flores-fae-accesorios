@@ -2,16 +2,14 @@ const shoppingCartBtn = document.querySelectorAll('.cart-btn');
 
 const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
 
-let shoppingCartList = [];
+localStorage.setItem('shopping-cart', JSON.stringify[[]]);
 
-localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
+const shoppingCartListStorage = JSON.parse(localStorage.getItem('shopping-cart'));
+console.log((shoppingCartListStorage));
 
 const addProductLocalStorage = () => {
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartListStorage))
 }
-
-const shoppingCartListStorage = JSON.parse(localStorage.getItem('shopping-cart'));
-console.log((shoppingCartListStorage));
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
