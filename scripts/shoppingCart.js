@@ -4,8 +4,10 @@ const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-
 
 let shoppingCartList = [];
 
+localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
+
 const addProductLocalStorage = () => {
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartListStorage))
 }
 
 const shoppingCartListStorage = JSON.parse(localStorage.getItem('shopping-cart'));
