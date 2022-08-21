@@ -1,39 +1,39 @@
 const shoppingCartBtn = document.querySelectorAll('.cart-btn');
 
-const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
-
-localStorage.setItem('shopping-cart', JSON.stringify([]));
-
-// Guardar productos en el localStorage
-const saveProductsLocalStorage = (products) => {
-    localStorage.setItem('shopping-cart', JSON.stringify(products))
+function deletProduct() {
 }
 
-// Obtener carrito de compras del localStorage
-const getShoppingCartStorage = () => {
-    return JSON.parse(localStorage.getItem('shopping-cart'));
+const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
+
+let shoppingCartList = [];
+
+const addProductLocalStorage = () => {
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
 }
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
-    // let shoppingCart = getShoppingCartStorage();
-    // shoppingCart.push(product);
-    // saveProductsLocalStorage(shoppingCart);
+    shoppingCartList.push(product);
+    addProductLocalStorage();
 }
 
 // Funcion para eliminar producto del carrito
+
 const removeProductShoppingCart = (product) => {
     let productToRemove = shoppingCartList.findIndex(elem => elem == product);
     shoppingCartList.splice(productToRemove, 1);
+}
+
+// Obtener carrito de compras del LocalStorage
+const getShoppingCartStorage = () => {
+    return JSON.parse(localStorage.getItem('shopping-cart'));
 }
 
 
 shoppingCartBtn.forEach(item => {
     item.addEventListener('click', (event) => {
         let matchProduct = catalogueProducts.find(product => product.id == event.target.id);
-        let shoppingCart = getShoppingCartStorage();
-        shoppingCart.push(matchProduct);
-        saveProductsLocalStorage(shoppingCart);
+        addProductShoppingCart(matchProduct);
     })
 })
 
@@ -46,9 +46,9 @@ shoppingCardDeleteBtn.forEach(item => {
 })
 
 const reduceCheckout = () => {
-    let shoppingCartCheckout = getShoppingCartStorage();
+    let shoppingCartListStorage = getShoppingCartStorage();
     let shoppingCartPriceArr = []
-    shoppingCartCheckout.forEach(price => shoppingCartPriceArr.push(price.price))
+    shoppingCartListStorage.forEach(price => shoppingCartPriceArr.push(price.price))
     const subtotalValue = shoppingCartPriceArr.reduce((firstValue, secondValue) => firstValue + secondValue);
     return subtotalValue;
     
