@@ -16,13 +16,12 @@ const getShoppingCartStorage = () => {
     return JSON.parse(localStorage.getItem('shopping-cart'));
 }
 
+let shoppingCartListStorage = getShoppingCartStorage() || [];
+
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
-    let shoppingCartListStorage = getShoppingCartStorage() || [];
     shoppingCartListStorage.push(product);
-    console.log(shoppingCartListStorage);
     addProductLocalStorage(shoppingCartListStorage);
-    console.log(getShoppingCartStorage());
 }
 
 
@@ -34,12 +33,10 @@ shoppingCartBtn.forEach(item => {
 })
 
 const reduceCheckout = () => {
-    let shoppingCartListStorage = getShoppingCartStorage();
     let shoppingCartPriceArr = []
     shoppingCartListStorage.forEach(price => shoppingCartPriceArr.push(price.price))
     const subtotalValue = shoppingCartPriceArr.reduce((firstValue, secondValue) => firstValue + secondValue);
     return subtotalValue;
-    
 }
 
 const shipCost = 600;
