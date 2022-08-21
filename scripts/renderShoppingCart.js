@@ -5,6 +5,7 @@ const renderShoppingCart = () => {
     const emptyCart = document.createElement('h3');
     emptyCart.classList.add('empty-cart')
     emptyCart.innerHTML = `No hay productos en tu carrito. Puedes agregarlo desde <a href="catalogo.html">AQUÍ</a>`
+    let shoppingCartListStorage = getShoppingCartStorage();
 
     if(shoppingCartListStorage.length > 0) {
         shoppingCartStorage.forEach( product => {

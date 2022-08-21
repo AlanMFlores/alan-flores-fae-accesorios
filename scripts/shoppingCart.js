@@ -21,12 +21,10 @@ const saveProductsLocalStorage = (products) => {
     localStorage.setItem('shopping-cart', JSON.stringify(products))
 }
 
-let shoppingCartListStorage = getShoppingCartStorage() || [];
-
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
-    shoppingCartListStorage.push(product);
-    saveProductsLocalStorage(shoppingCartListStorage)
+    shoppingCartList.push(product);
+    saveProductsLocalStorage(shoppingCartList)
 }
 
 shoppingCartBtn.forEach(item => {
