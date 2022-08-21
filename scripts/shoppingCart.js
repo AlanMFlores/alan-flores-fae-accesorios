@@ -9,10 +9,14 @@ const addProductLocalStorage = () => {
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
 }
 
+addProductLocalStorage()
+
 // Obtener carrito de compras del LocalStorage
 const getShoppingCartStorage = () => {
     return JSON.parse(localStorage.getItem('shopping-cart'));
 }
+
+let shoppingCartListStorage = getShoppingCartStorage();
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
