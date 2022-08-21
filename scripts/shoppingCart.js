@@ -2,15 +2,15 @@ const shoppingCartBtn = document.querySelectorAll('.cart-btn');
 
 const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
 
-const addProductLocalStorage = () => {
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartListStorage))
+const addProductLocalStorage = (shoppingList) => {
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingList))
 }
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
     const shoppingCartListStorage = []
     shoppingCartListStorage.push(product);
-    addProductLocalStorage();
+    addProductLocalStorage(shoppingCartListStorage);
 }
 
 // Funcion para eliminar producto del carrito
@@ -42,8 +42,9 @@ shoppingCardDeleteBtn.forEach(item => {
 })
 
 const reduceCheckout = () => {
+    let shoppingCartCheckout = JSON.parse(getShoppingCartStorage());
     let shoppingCartPriceArr = []
-    shoppingCartListStorage.forEach(price => shoppingCartPriceArr.push(price.price))
+    shoppingCartListCheckout.forEach(price => shoppingCartPriceArr.push(price.price))
     const subtotalValue = shoppingCartPriceArr.reduce((firstValue, secondValue) => firstValue + secondValue);
     return subtotalValue;
     
