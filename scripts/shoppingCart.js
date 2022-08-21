@@ -2,7 +2,7 @@ const shoppingCartBtn = document.querySelectorAll('.cart-btn');
 
 const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
 
-localStorage.setItem('shopping-cart', JSON.stringify[[]]);
+localStorage.setItem('shopping-cart', JSON.stringify([]));
 
 const shoppingCartListStorage = JSON.parse(localStorage.getItem('shopping-cart'));
 console.log((shoppingCartListStorage));
