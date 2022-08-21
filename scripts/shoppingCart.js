@@ -11,7 +11,7 @@ const saveProductsLocalStorage = (products) => {
 
 // Obtener carrito de compras del localStorage
 const getShoppingCartStorage = () => {
-    return JSON.parse(localStorage.getItem('shopping-cart')) || [];
+    return JSON.parse(localStorage.getItem('shopping-cart'));
 }
 
 saveProductsLocalStorage(shoppingCartList);
