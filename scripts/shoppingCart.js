@@ -42,9 +42,9 @@ shoppingCardDeleteBtn.forEach(item => {
 })
 
 const reduceCheckout = () => {
-    let shoppingCartCheckout = JSON.parse(getShoppingCartStorage());
+    let shoppingCartCheckout = getShoppingCartStorage();
     let shoppingCartPriceArr = []
-    shoppingCartListCheckout.forEach(price => shoppingCartPriceArr.push(price.price))
+    shoppingCartCheckout.forEach(price => shoppingCartPriceArr.push(price.price))
     const subtotalValue = shoppingCartPriceArr.reduce((firstValue, secondValue) => firstValue + secondValue);
     return subtotalValue;
     
