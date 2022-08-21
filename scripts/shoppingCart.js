@@ -4,27 +4,25 @@ const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-
 
 let shoppingCartList = [];
 localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
+console.log(shoppingCartList);
 
+// Guardar producto en localStorage
 const addProductLocalStorage = (products) => {
     localStorage.setItem('shopping-cart', JSON.stringify(products))
 }
 
-// Funcion para añadir producto al carrito
-const addProductShoppingCart = (product) => {
-    shoppingCartList.push(product);
-    addProductLocalStorage(shoppingCartList);
-}
-
-// Funcion para eliminar producto del carrito
-
-const removeProductShoppingCart = (product) => {
-    let productToRemove = shoppingCartList.findIndex(elem => elem == product);
-    shoppingCartList.splice(productToRemove, 1);
-}
-
-// Obtener carrito de compras del LocalStorage
+// Obtener carrito de compras del localStorage
 const getShoppingCartStorage = () => {
     return JSON.parse(localStorage.getItem('shopping-cart'));
+}
+
+// Funcion para añadir producto al carrito
+const addProductShoppingCart = (product) => {
+    let shoppingCartListStorage = getShoppingCartStorage() || [];
+    shoppingCartListStorage.push(product);
+    console.log(shoppingCartListStorage);
+    addProductLocalStorage(shoppingCartListStorage);
+    console.log(getShoppingCartStorage());
 }
 
 
@@ -32,14 +30,6 @@ shoppingCartBtn.forEach(item => {
     item.addEventListener('click', (event) => {
         let matchProduct = catalogueProducts.find(product => product.id == event.target.id);
         addProductShoppingCart(matchProduct);
-    })
-})
-
-shoppingCardDeleteBtn.forEach(item => {
-    item.addEventListener('click', (event) => {
-        console.log(event.target);
-        removeProductShoppingCart(event.target);
-        renderShoppingCart();
     })
 })
 
