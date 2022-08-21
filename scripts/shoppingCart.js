@@ -16,12 +16,9 @@ const getShoppingCartStorage = () => {
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
-    let shoppingCart = getShoppingCartStorage();
-    console.log(shoppingCart);
-    shoppingCart.push(product);
-    console.log(shoppingCart);
-    saveProductsLocalStorage(shoppingCart);
-    console.log(shoppingCart);
+    // let shoppingCart = getShoppingCartStorage();
+    // shoppingCart.push(product);
+    // saveProductsLocalStorage(shoppingCart);
 }
 
 // Funcion para eliminar producto del carrito
@@ -34,7 +31,9 @@ const removeProductShoppingCart = (product) => {
 shoppingCartBtn.forEach(item => {
     item.addEventListener('click', (event) => {
         let matchProduct = catalogueProducts.find(product => product.id == event.target.id);
-        addProductShoppingCart(matchProduct);
+        let shoppingCart = getShoppingCartStorage();
+        shoppingCart.push(product);
+        saveProductsLocalStorage(shoppingCart);
     })
 })
 
