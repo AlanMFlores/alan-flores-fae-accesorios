@@ -2,7 +2,7 @@ const shoppingCartBtn = document.querySelectorAll('.cart-btn');
 
 const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
 
-let shoppingCartList = [];
+localStorage.setItem('shopping-cart', JSON.stringify([]));
 
 // Guardar productos en el localStorage
 const saveProductsLocalStorage = (products) => {
@@ -13,8 +13,6 @@ const saveProductsLocalStorage = (products) => {
 const getShoppingCartStorage = () => {
     return JSON.parse(localStorage.getItem('shopping-cart'));
 }
-
-saveProductsLocalStorage(shoppingCartList);
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
