@@ -35,6 +35,7 @@ shoppingCartBtn.forEach(item => {
 })
 
 const reduceCheckout = () => {
+    let shoppingCartListStorage = getShoppingCartStorage();
     let shoppingCartPriceArr = []
     shoppingCartListStorage.forEach(price => shoppingCartPriceArr.push(price.price))
     const subtotalValue = shoppingCartPriceArr.reduce((firstValue, secondValue) => firstValue + secondValue);
