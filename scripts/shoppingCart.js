@@ -14,13 +14,11 @@ const getShoppingCartStorage = () => {
     return JSON.parse(localStorage.getItem('shopping-cart'));
 }
 
-
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
     shoppingCartList.push(product);
     addProductLocalStorage();
 }
-
 
 shoppingCartBtn.forEach(item => {
     item.addEventListener('click', (event) => {
