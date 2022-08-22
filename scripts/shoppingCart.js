@@ -2,24 +2,14 @@ const shoppingCartBtn = document.querySelectorAll('.cart-btn');
 
 const shoppingCardDeleteBtn = document.querySelectorAll('.shopping-card--delete-btn');
 
-let shoppingCartList = [];
-
-// Agregar productos al localStorage
-const saveProductsLocalStorage = () => {
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartList))
-}
-
-// Obtener carrito de compras del LocalStorage
+// Obtener carrito de compras del localStorage
 const getShoppingCartStorage = () => {
-    return JSON.parse(localStorage.getItem('shopping-cart'));
+    return JSON.parse(localStorage.getItem('shopping-cart')) || [];
 }
-
-let shoppingCartListStorage = getShoppingCartStorage();
-
-console.log(shoppingCartListStorage);
 
 // Funcion para añadir producto al carrito
 const addProductShoppingCart = (product) => {
+    let shoppingCartListStorage = getShoppingCartStorage();
     shoppingCartListStorage.push(product);
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCartListStorage));
 }
@@ -31,6 +21,7 @@ shoppingCartBtn.forEach(item => {
     })
 })
 
+// Función Checkout
 const reduceCheckout = () => {
     let shoppingCartListStorage = getShoppingCartStorage();
     let shoppingCartPriceArr = []
